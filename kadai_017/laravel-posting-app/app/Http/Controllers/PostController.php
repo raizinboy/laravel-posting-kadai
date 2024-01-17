@@ -17,7 +17,7 @@ class PostController extends Controller
     //一覧ページ
     public function index(){
         //postsテーブルの全データを新しい順から取得する　all()メソッドやget()メソッドはcollectionというインスタンスを返す。
-        $posts = post::oldest()->get();
+        $posts = post::oldest('updated_at')->get();
         //viewヘルパー 表示したいビューを引数として指定する。かき方は (フォルダ名.ファイル名) resource/viewフォルダを基準とする
         //第二引数はcompact()関数を指定し、引数には変数名を指定する。$は不要
         //compact関数=引数として渡された変数とその値から配列を作成し、戻り値として返す関数

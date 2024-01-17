@@ -82,7 +82,11 @@
                 <p class="card-text">{{ $post->content }}</p>
                 
                 <div>
+                    @if($post->updated_at)
+                    <p> {{ $post->updated_at }}</p>
+                    @else
                     <p> {{ $post->created_at }}</p>
+                    @endif
                 </div>
 
                 <div class="d-flex">
